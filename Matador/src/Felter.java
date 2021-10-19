@@ -5,7 +5,7 @@ public class Felter {
         return felt[a][b];
     }
 
-    private String[][] felt;
+    private final String[][] felt;
 
     public Felter(){
         felt = new String[][]{{"Tower", "+250"},{"Crater","-100"},{"Place gates","+100"},
