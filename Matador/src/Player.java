@@ -31,4 +31,3 @@ public class Player {
             this.point = 1000;
         }
     }
-
