@@ -1,7 +1,7 @@
 
 public class Board {
 
-    public String getFelt(int a, int b) {
+    public String getBoard(int a, int b) {
         return felt[a][b];
     }
 

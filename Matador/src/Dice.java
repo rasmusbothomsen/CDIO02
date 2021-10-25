@@ -5,6 +5,7 @@ public class Dice {
     public int[] get;
     Random dice = new Random();
     public int faceValue;
+
     public Dice(int faceValue){
         this.faceValue=faceValue;
     }
