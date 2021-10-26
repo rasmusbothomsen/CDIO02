@@ -19,14 +19,25 @@ public class PlayTurn {
         pressToPlay();
         int[] diceThrow = dice.getDice();
         int diceAccThrow=(diceThrow[0]+diceThrow[1])-2;
-        System.out.println(player.getName()+" Slog "+diceThrow[0]+" og "+diceThrow[1]);
-        System.out.println(player.getName()+" Landende på: "+board.getBoard(diceAccThrow,0));
-        System.out.println("Feltet påvirker din pengebeholdning med: "+board.getBoard(diceAccThrow,1));
-        player.addPoint(Integer.parseInt(board.getBoard(diceAccThrow,1)));
-        System.out.println(player.getName()+" Har nu: "+player.getPoint()+"\n");
+        printResult(diceThrow,board);
+        addPoints(board.getBoard(diceAccThrow,0));
+        checkPoints(player);
         if (diceAccThrow==9){
             playTurn();
         }
+    }
+    public void printResult(int[] diceThrow, Board board){
+        int diceAccThrow=(diceThrow[0]+diceThrow[1])-2;
+        System.out.println(player.getName()+" Slog "+diceThrow[0]+" og "+diceThrow[1]);
+        System.out.println(player.getName()+" Landende på: "+board.getBoard(diceAccThrow,0));
+        System.out.println("Feltet påvirker din pengebeholdning med: "+board.getBoard(diceAccThrow,1));
+    }
+    public void addPoints(String effektOnPoints){
+        player.addPoint(Integer.parseInt(effektOnPoints));
+        System.out.println(player.getName()+" Har nu: "+player.getPoint()+"\n");
+
+    }
+    public void checkPoints(Player player){
         if(player.getPoint()>=3000) this.haswon=true;
     }
     public void pressToPlay(){
