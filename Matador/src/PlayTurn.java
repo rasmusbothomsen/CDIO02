@@ -2,7 +2,7 @@ import java.util.Scanner;
 public class PlayTurn {
     private  Player player;
     private boolean haswon;
-    private static Dice dice;
+    private static Dice dice = new Dice(6);
 
 
     public PlayTurn(Player player){
@@ -18,11 +18,12 @@ public class PlayTurn {
         System.out.println("Det er "+player.getName()+" tur");
         pressToPlay();
         int[] diceThrow = dice.getDice();
-        int diceAccThrow=diceThrow[0]+diceThrow[1];
+        int diceAccThrow=(diceThrow[0]+diceThrow[1])-2;
         System.out.println(player.getName()+" Slog "+diceThrow[0]+" og "+diceThrow[1]);
-        System.out.println(player.getName()+"Landende på: "+board.getBoard(diceAccThrow,0));
+        System.out.println(player.getName()+" Landende på: "+board.getBoard(diceAccThrow,0));
         System.out.println("Feltet påvirker din pengebeholdning med: "+board.getBoard(diceAccThrow,1));
         player.addPoint(Integer.parseInt(board.getBoard(diceAccThrow,1)));
+        System.out.println(player.getName()+" Har nu: "+player.getPoint()+"\n");
         if (diceAccThrow==9){
             playTurn();
         }
@@ -31,13 +32,11 @@ public class PlayTurn {
     public void pressToPlay(){
         Scanner scan = new Scanner(System.in);
         boolean rightButton=false;
-        char buttenToPress = (char) player.getPlayerNumber();
+        char buttenToPress = (char) (player.getPlayerNumber()+'0');
         while(!rightButton) {
                 System.out.println(player.getName() + ", Tryk "+buttenToPress+" For at kaste");
                 String buttonPressed = scan.nextLine();
                 if (buttonPressed.charAt(0)== buttenToPress) rightButton=true;
-
-            System.out.println("Wait");
 
             }
     }
