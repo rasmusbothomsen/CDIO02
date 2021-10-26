@@ -13,7 +13,7 @@ public class BoardGame {
         PlayTurn playTurnPlayer2 = new PlayTurn(player2);
 
 
-        while (!playTurnPlayer1.getHasWon()|| !playTurnPlayer2.getHasWon()){
+        while (!playTurnPlayer1.getHasWon()&& !playTurnPlayer2.getHasWon()){
             playTurnPlayer1.playTurn();
             playTurnPlayer2.playTurn();
         }

@@ -32,7 +32,7 @@ public class PlayTurn {
     public void pressToPlay(){
         Scanner scan = new Scanner(System.in);
         boolean rightButton=false;
-        char buttenToPress = (char) (player.getPlayerNumber()+'0');
+        char buttenToPress = (char) (player.getPlayerNumber()+'0'); // 0 har en ASCII på 48, så dermed bliver tallet til en char
         while(!rightButton) {
                 System.out.println(player.getName() + ", Tryk "+buttenToPress+" For at kaste");
                 String buttonPressed = scan.nextLine();
