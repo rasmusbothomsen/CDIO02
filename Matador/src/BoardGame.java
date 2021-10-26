@@ -13,15 +13,21 @@ public class BoardGame {
         PlayTurn playTurnPlayer2 = new PlayTurn(player2);
 
 
-        while (!playTurnPlayer1.getHasWon()|| !playTurnPlayer2.getHasWon()){
+        //while (!playTurnPlayer1.getHasWon()&& !playTurnPlayer2.getHasWon()){
+        while (testIfGameHasEnded(playTurnPlayer1,playTurnPlayer2)){
             playTurnPlayer1.playTurn();
+            playTurnPlayer1.checkPoints(player1);
             playTurnPlayer2.playTurn();
+            playTurnPlayer1.checkPoints(player2);
         }
         if(playTurnPlayer1.getHasWon()){
             System.out.println("Spiller 1 har vundet");
         } else System.out.println("Spiller 2 har vundet");
 
 
+    }
+    public static boolean testIfGameHasEnded(PlayTurn player1, PlayTurn player2){
+        return !player1.getHasWon() && !player2.getHasWon();
     }
 
     public static void introText(){
