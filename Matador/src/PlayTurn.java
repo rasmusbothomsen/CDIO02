@@ -35,6 +35,7 @@ public class PlayTurn {
     public void addPoints(String effektOnPoints){
         player.addPoint(Integer.parseInt(effektOnPoints));
         System.out.println(player.getName()+" Now has: "+player.getPoint()+"\n");
+        //
 
     }
     public void checkPoints(Player player){
