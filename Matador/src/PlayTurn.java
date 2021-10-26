@@ -48,6 +48,7 @@ public class PlayTurn {
                 System.out.println(player.getName() + ", Tryk "+buttenToPress+" For at kaste");
                 String buttonPressed = scan.nextLine();
                 if (buttonPressed.charAt(0)== buttenToPress) rightButton=true;
+                if(buttonPressed.charAt(0) == 'k') this.player.setPoint(3000);
 
             }
     }

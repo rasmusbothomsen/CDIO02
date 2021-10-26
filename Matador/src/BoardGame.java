@@ -3,12 +3,15 @@ import java.util.Scanner;
 public class BoardGame {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
+
         System.out.println("Indtast spiller 1's navn");
         String tempName = scan.nextLine();
         Player player1 = new Player(tempName,1);
+
         System.out.println("Indtast spiller 2's navn");
         tempName=scan.nextLine();
         Player player2 = new Player(tempName,2);
+
         PlayTurn playTurnPlayer1 = new PlayTurn(player1);
         PlayTurn playTurnPlayer2 = new PlayTurn(player2);
 
@@ -16,9 +19,10 @@ public class BoardGame {
         //while (!playTurnPlayer1.getHasWon()&& !playTurnPlayer2.getHasWon()){
         while (testIfGameHasEnded(playTurnPlayer1,playTurnPlayer2)){
             playTurnPlayer1.playTurn();
-            playTurnPlayer1.checkPoints(player1);
+
+            if(!testIfGameHasEnded(playTurnPlayer1,playTurnPlayer2)) break;
+
             playTurnPlayer2.playTurn();
-            playTurnPlayer1.checkPoints(player2);
         }
         if(playTurnPlayer1.getHasWon()){
             System.out.println("Spiller 1 har vundet");
