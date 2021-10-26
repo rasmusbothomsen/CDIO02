@@ -27,8 +27,16 @@ public class BoardGame {
         if(playTurnPlayer1.getHasWon()){
             System.out.println("Player 1 has won");
         } else System.out.println("Player 2 has won");
+        restartGame(scan);
 
 
+    }
+    public static void restartGame(Scanner scan){
+        System.out.println("Vil i spille igen? y/n");
+        String playAgain = scan.nextLine();
+        if (playAgain.charAt(0)=='y'){
+            main(null);
+        }
     }
     public static boolean testIfGameHasEnded(PlayTurn player1, PlayTurn player2){
         return !player1.getHasWon() && !player2.getHasWon();
