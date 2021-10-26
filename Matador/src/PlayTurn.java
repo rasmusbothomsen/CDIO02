@@ -31,11 +31,13 @@ public class PlayTurn {
     public void pressToPlay(){
         Scanner scan = new Scanner(System.in);
         boolean rightButton=false;
-        int buttenToPress = player.getPlayerNumber();
+        char buttenToPress = (char) player.getPlayerNumber();
         while(!rightButton) {
                 System.out.println(player.getName() + ", Tryk "+buttenToPress+" For at kaste");
                 String buttonPressed = scan.nextLine();
                 if (buttonPressed.charAt(0)== buttenToPress) rightButton=true;
+
+            System.out.println("Wait");
 
             }
     }
