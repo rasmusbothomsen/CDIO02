@@ -25,8 +25,8 @@ public class BoardGame {
             playTurnPlayer2.playTurn();
         }
         if(playTurnPlayer1.getHasWon()){
-            System.out.println("Spiller 1 har vundet");
-        } else System.out.println("Spiller 2 har vundet");
+            System.out.println("Player 1 has won");
+        } else System.out.println("Player 2 has won");
 
 
     }
@@ -35,11 +35,11 @@ public class BoardGame {
     }
 
     public static void introText(){
-        System.out.println("Velkommen til FeltSpillet");
+        System.out.println("Welcome to the Fieldgame");
         System.out.println("--------------------------------------------------------------------------------------------");
-        System.out.println("Hver af spillerne skiftes til at slå med 2 terninger og lander på et vilkårligt felt fra 2-12");
-        System.out.println("Hver af disse felter har en positiv eller negativ påvirkning på spillerens pengebeholdning");
-        System.out.println("Man vinder ved at opnå 3000 point");
+        System.out.println("Each of the players take their turn to throw the dice and will land on field 2-12");
+        System.out.println("Each of the fields will have either a negative og positive impact on the players cash balance");
+        System.out.println("The game is won by achieving 3000 points ");
         System.out.println("");
         System.out.println("");
         System.out.println("--------------------------------------------------------------------------------------------");
