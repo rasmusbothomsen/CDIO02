@@ -15,7 +15,7 @@ public class PlayTurn {
     }
     public void playTurn(){
         Board board = new Board();
-        System.out.println("Det er "+player.getName()+" tur");
+        System.out.println(" "+player.getName()+"'s turn");
         pressToPlay();
         int[] diceThrow = dice.getDice();
         int diceAccThrow=(diceThrow[0]+diceThrow[1])-2;
@@ -28,13 +28,13 @@ public class PlayTurn {
     }
     public void printResult(int[] diceThrow, Board board){
         int diceAccThrow=(diceThrow[0]+diceThrow[1])-2;
-        System.out.println(player.getName()+" Slog "+diceThrow[0]+" og "+diceThrow[1]);
-        System.out.println(player.getName()+" Landende på: "+board.getBoard(diceAccThrow,0));
-        System.out.println("Feltet påvirker din pengebeholdning med: "+board.getBoard(diceAccThrow,1));
+        System.out.println(player.getName()+" Rolled "+diceThrow[0]+" and "+diceThrow[1]);
+        System.out.println(player.getName()+" "+board.getBoard(diceAccThrow,0));
+        System.out.println("The field will impact your cash balance with: "+board.getBoard(diceAccThrow,1));
     }
     public void addPoints(String effektOnPoints){
         player.addPoint(Integer.parseInt(effektOnPoints));
-        System.out.println(player.getName()+" Har nu: "+player.getPoint()+"\n");
+        System.out.println(player.getName()+" Now has: "+player.getPoint()+"\n");
 
     }
     public void checkPoints(Player player){
@@ -45,7 +45,7 @@ public class PlayTurn {
         boolean rightButton=false;
         char buttenToPress = (char) (player.getPlayerNumber()+'0'); // 0 har en ASCII på 48, så dermed bliver tallet til en char
         while(!rightButton) {
-                System.out.println(player.getName() + ", Tryk "+buttenToPress+" For at kaste");
+                System.out.println(player.getName() + ", Press "+buttenToPress+" To roll");
                 String buttonPressed = scan.nextLine();
                 if (buttonPressed.charAt(0)== buttenToPress) rightButton=true;
 
