@@ -29,7 +29,7 @@ public class PlayTurn {
     public void printResult(int[] diceThrow, Board board){
         int diceAccThrow=(diceThrow[0]+diceThrow[1])-2;
         System.out.println(player.getName()+" Rolled "+diceThrow[0]+" and "+diceThrow[1]);
-        System.out.println(player.getName()+board.getBoard(diceAccThrow,0));
+        System.out.println(board.getBoard(diceAccThrow,0));
         System.out.println("The field will impact your cash balance with: "+board.getBoard(diceAccThrow,1));
     }
     public void addPoints(String effektOnPoints){
