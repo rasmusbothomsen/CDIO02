@@ -4,11 +4,11 @@ public class BoardGame {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         introText();
-        System.out.println("Indtast spiller 1's navn");
+        System.out.println("Player 1 enter your name!");
         String tempName = scan.nextLine();
         Player player1 = new Player(tempName,1);
 
-        System.out.println("Indtast spiller 2's navn");
+        System.out.println("Player 2 enter your name!");
         tempName=scan.nextLine();
         Player player2 = new Player(tempName,2);
 
