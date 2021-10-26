@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class BoardGame {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-
+        introText();
         System.out.println("Indtast spiller 1's navn");
         String tempName = scan.nextLine();
         Player player1 = new Player(tempName,1);
@@ -40,8 +40,8 @@ public class BoardGame {
         System.out.println("Each of the players take their turn to throw the dice and will land on field 2-12");
         System.out.println("Each of the fields will have either a negative og positive impact on the players cash balance");
         System.out.println("The game is won by achieving 3000 points ");
-        System.out.println("");
-        System.out.println("");
+        System.out.println(" ");
+        System.out.println(" ");
         System.out.println("--------------------------------------------------------------------------------------------");
     }
 
