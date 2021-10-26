@@ -48,6 +48,29 @@ class PlayTurnTest {
         boolean resualt = BoardGame.testIfGameHasEnded(player1turn,player2turn);
         assertFalse(resualt);
     }
+    @Test
+    void testIfGameHasEndedPlayer1300PointsExact(){
+        Player player1 = new Player("Test",1);
+        Player player2 = new Player("Test",1);
+        PlayTurn player1turn = new PlayTurn(player1);
+        PlayTurn player2turn = new PlayTurn(player2);
+        player1.addPoint(2000);
+        player1turn.checkPoints(player1);
+        boolean resualt = BoardGame.testIfGameHasEnded(player1turn,player2turn);
+        assertFalse(resualt);
+    }
+    @Test
+    void testIfGameHasEndedPlayer2300PointsExact(){
+        Player player1 = new Player("Test",1);
+        Player player2 = new Player("Test",1);
+        PlayTurn player1turn = new PlayTurn(player1);
+        PlayTurn player2turn = new PlayTurn(player2);
+        player2.addPoint(2000);
+        player2turn.checkPoints(player2);
+        boolean resualt = BoardGame.testIfGameHasEnded(player1turn,player2turn);
+        assertFalse(resualt);
+    }
+
     /*@Test
     void testOutOfBoundsBoardArray(){
         Board board = new Board();

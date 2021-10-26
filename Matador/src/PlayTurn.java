@@ -15,12 +15,12 @@ public class PlayTurn {
     }
     public void playTurn(){
         Board board = new Board();
-        System.out.println("Det er "+player.getName()+" tur");
+        System.out.println("Det er "+player.getName()+"'s tur");
         pressToPlay();
         int[] diceThrow = dice.getDice();
         int diceAccThrow=(diceThrow[0]+diceThrow[1])-2;
         printResult(diceThrow,board);
-        addPoints(board.getBoard(diceAccThrow,0));
+        addPoints(board.getBoard(diceAccThrow,1));
         checkPoints(player);
         if (diceAccThrow==9){
             playTurn();
