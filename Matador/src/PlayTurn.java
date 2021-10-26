@@ -1,6 +1,6 @@
 import java.util.Scanner;
 public class PlayTurn {
-    private  Player player;
+    public  Player player;
     private boolean haswon;
     private static Dice dice = new Dice(6);
 
@@ -15,7 +15,7 @@ public class PlayTurn {
     }
     public void playTurn(){
         Board board = new Board();
-        System.out.println(" "+player.getName()+"'s turn");
+        System.out.println(player.getName()+"'s turn");
         pressToPlay();
         int[] diceThrow = dice.getDice();
         int diceAccThrow=(diceThrow[0]+diceThrow[1])-2;

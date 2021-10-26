@@ -35,14 +35,14 @@ public class BoardGame {
     }
 
     public static void introText(){
-        System.out.println("Welcome to the Fieldgame");
+        System.out.println("\n"+"Welcome to the FieldGame");
         System.out.println("--------------------------------------------------------------------------------------------");
+        System.out.println(" ");
         System.out.println("Each of the players take their turn to throw the dice and will land on field 2-12");
         System.out.println("Each of the fields will have either a negative og positive impact on the players cash balance");
         System.out.println("The game is won by achieving 3000 points ");
         System.out.println(" ");
-        System.out.println(" ");
-        System.out.println("--------------------------------------------------------------------------------------------");
+        System.out.println("--------------------------------------------------------------------------------------------"+"\n \n");
     }
 
 
