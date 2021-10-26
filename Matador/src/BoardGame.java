@@ -32,7 +32,7 @@ public class BoardGame {
 
     }
     public static void restartGame(Scanner scan){
-        System.out.println("Vil i spille igen? y/n");
+        System.out.println("Wanna play again? y/n");
         String playAgain = scan.nextLine();
         if (playAgain.charAt(0)=='y'){
             main(null);
