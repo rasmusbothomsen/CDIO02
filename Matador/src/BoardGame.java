@@ -25,8 +25,8 @@ public class BoardGame {
             playTurnPlayer2.playTurn();
         }
         if(playTurnPlayer1.getHasWon()){
-            System.out.println("Player 1 has won");
-        } else System.out.println("Player 2 has won");
+            System.out.println(player1.getName()+" has won");
+        } else System.out.println(player2.getName()+" has won");
         restartGame(scan);
 
 
