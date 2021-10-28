@@ -1,3 +1,4 @@
+
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -69,6 +70,13 @@ class PlayTurnTest {
         player2turn.checkPoints(player2);
         boolean resualt = BoardGame.testIfGameHasEnded(player1turn,player2turn);
         assertFalse(resualt);
+    }
+
+    @Test
+    void testPlayerPointsNotLessThanZero(){
+        Player player = new Player("test",1);
+        player.addPoint(-1500);
+        assertEquals(player.getPoint(), 0 );
     }
 
     /*@Test
