@@ -4,11 +4,11 @@ public class BoardGame {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         introText();
-        System.out.println("Indtast spiller 1's navn");
+        System.out.println("Player 1 enter your name!");
         String tempName = scan.nextLine();
         Player player1 = new Player(tempName,1);
 
-        System.out.println("Indtast spiller 2's navn");
+        System.out.println("Player 2 enter your name!");
         tempName=scan.nextLine();
         Player player2 = new Player(tempName,2);
 
@@ -25,24 +25,32 @@ public class BoardGame {
             playTurnPlayer2.playTurn();
         }
         if(playTurnPlayer1.getHasWon()){
-            System.out.println("Player 1 has won");
-        } else System.out.println("Player 2 has won");
+            System.out.println(player1.getName()+" has won");
+        } else System.out.println(player2.getName()+" has won");
+        restartGame(scan);
 
 
+    }
+    public static void restartGame(Scanner scan){
+        System.out.println("Wanna play again? y/n");
+        String playAgain = scan.nextLine();
+        if (playAgain.charAt(0)=='y'){
+            main(null);
+        }
     }
     public static boolean testIfGameHasEnded(PlayTurn player1, PlayTurn player2){
         return !player1.getHasWon() && !player2.getHasWon();
     }
 
     public static void introText(){
-        System.out.println("Welcome to the Fieldgame");
+        System.out.println("\n"+"Welcome to the FieldGame");
         System.out.println("--------------------------------------------------------------------------------------------");
+        System.out.println(" ");
         System.out.println("Each of the players take their turn to throw the dice and will land on field 2-12");
         System.out.println("Each of the fields will have either a negative og positive impact on the players cash balance");
         System.out.println("The game is won by achieving 3000 points ");
         System.out.println(" ");
-        System.out.println(" ");
-        System.out.println("--------------------------------------------------------------------------------------------");
+        System.out.println("--------------------------------------------------------------------------------------------"+"\n \n");
     }
 
 
