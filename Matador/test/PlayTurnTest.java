@@ -1,4 +1,5 @@
 
+import org.junit.jupiter.api.RepeatedTest;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -77,6 +78,20 @@ class PlayTurnTest {
         Player player = new Player("test",1);
         player.addPoint(-1500);
         assertEquals(player.getPoint(), 0 );
+    }
+
+    @RepeatedTest(1000)
+    void blackBoxTestOfGame(){
+            GamePlayTest.main(null);
+            if(GamePlayTest.getPlayer1Point()>=3000){
+                assertTrue(GamePlayTest.isPlayer1Won());
+            }
+        if(GamePlayTest.getPlayer2Point()>=3000){
+            assertTrue(GamePlayTest.isPlayer2won());
+        }
+
+
+
     }
 
     /*@Test

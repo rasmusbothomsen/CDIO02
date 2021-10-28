@@ -16,7 +16,6 @@ public class PlayTurn {
     public void playTurn(){
         Board board = new Board();
         System.out.println(player.getName()+"'s turn");
-        pressToPlay();
         int[] diceThrow = dice.getDice();
         int diceAccThrow=(diceThrow[0]+diceThrow[1])-2;
         printResult(diceThrow,board);
