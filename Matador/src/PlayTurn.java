@@ -34,8 +34,8 @@ public class PlayTurn {
         System.out.println(board.getBoard(diceAccThrow,0));
         System.out.println("The field will impact your cash balance with: "+board.getBoard(diceAccThrow,1));
     }
-    public void addPoints(String effektOnPoints){
-        player.addPoint(Integer.parseInt(effektOnPoints));
+    public void addPoints(String effectOnPoints){
+        player.addPoint(Integer.parseInt(effectOnPoints));
         System.out.println(player.getName()+" Now has: "+player.getPoint()+"\n");
         //
 
