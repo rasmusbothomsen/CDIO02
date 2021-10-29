@@ -1,5 +1,9 @@
+package test;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
+import src.BoardGame;
+import src.PlayTurn;
+import src.Player;
 
 import static org.junit.jupiter.api.Assertions.*;
 
